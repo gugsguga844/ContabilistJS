@@ -17,7 +17,7 @@
     "url": "https://github.com/gugsguga844/ContabilistJS/issues"
   },
   "homepage": "https://github.com/gugsguga844/ContabilistJS#readme",
-  "devDependencies": {
-    "tailwindcss": "^3.3.3"
+  "dependencies": {
+    "bootstrap": "^5.3.2"
   }
 }

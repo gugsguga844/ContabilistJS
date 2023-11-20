@@ -1,5 +1,3 @@
-form {}
-
 .form-container {
     width: 100%;
     max-width: 1200px;
@@ -61,7 +59,7 @@ label .form-message{
 
 .defaultButton a,
 .defaultButton button{
-    background-color: var(--golden-yellow);
+    background-color: #D1972C;
     border: 1px solid #6D6D6D;
     text-decoration: none;
     color: #000;

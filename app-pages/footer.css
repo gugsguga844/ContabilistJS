@@ -1,0 +1,24 @@
+footer {
+    max-width: 100%;
+    padding-top: 16%;
+}
+
+footer p {
+    font-weight: 500;
+}
+footer p strong{
+    color: #D1972C;
+    font-weight: 500;
+}
+
+@media (min-width: 992px) {
+    footer p {
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    footer p {
+        padding-top: 10px;
+    }
+} 

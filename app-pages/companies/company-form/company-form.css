@@ -28,8 +28,8 @@ label p{
     font-weight: bold;
 }
 
-label input,
-label select{
+input,
+select{
     display: block;
     width: 100%;
     padding: 5px;
@@ -71,4 +71,12 @@ label .form-message{
 
 .submitButton {
     text-align: right;
+}
+
+label :invalid {
+    border: 1px solid red;
+}
+
+label :valid {
+    border: 1px solid green;
 }

@@ -1,6 +1,10 @@
 footer {
     max-width: 100%;
-    padding-top: 16%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
 footer p {

@@ -42,10 +42,13 @@ function clearForm() {
 }
 
 function submitForm(event) {
+    event.preventDefault();
+
+    const storedData = JSON.parse(localStorage.getItem('formDataList')) || [];
 
     const formData = {
         businessName: document.getElementById('businessName').value,
-        status: document.getElementById('status').value,
+        status: document.getElementById('status').value === 'true' ? 'Ativa' : 'Inativa',
         name: document.getElementById('name').value,
         cnpj: document.getElementById('cnpj').value,
         email: document.getElementById('email').value,
@@ -55,31 +58,9 @@ function submitForm(event) {
         state: document.getElementById('state').value,
     };
 
-    console.log('Form Data:', formData);
-
-    displayFormData(formData);
-}
-
-function displayFormData(formData) {
-    const outputContainer = document.getElementById('output-container');
+    storedData.push(formData);
     
-    if (outputContainer) {
-        
-        const outputHTML = `
-            <h2>Você adicionou a empresa:</h2>
-            <p>Razão Social: ${formData.businessName}</p>
-            <p>Status: ${formData.status}</p>
-            <p>Nome Fantasia: ${formData.name}</p>
-            <p>CNPJ: ${formData.cnpj}</p>
-            <p>Email: ${formData.email}</p>
-            <p>Telefone: ${formData.phone}</p>
-            <p>CEP: ${formData.cep}</p>
-            <p>Cidade: ${formData.city}</p>
-            <p>Estado: ${formData.state}</p>
-        `;
-        
-        outputContainer.innerHTML = outputHTML;
-    } else {
-        console.error('pq sera');
-    }
+    localStorage.setItem('formDataList', JSON.stringify(storedData));
+    console.log('Form Data List:', formData);
+    window.location.href = '../companies-list/companies-list.html';
 }

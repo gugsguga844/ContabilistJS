@@ -10,8 +10,8 @@ storedData.forEach(function (formData) {
     row.innerHTML = `
         <td>${formData.businessName}<br>${formData.name}</td>
         <td>${formData.cnpj}<br>${formData.phone}</td>
-        <td>${formData.city}<br>${formData.state}</td>
-        <td>${formData.status}</td>
+        <td class="d-none d-md-table-cell">${formData.city}<br>${formData.state}</td>
+        <td class="d-none d-md-table-cell">${formData.status}</td>
     `;
     tableBody.appendChild(row);
 });

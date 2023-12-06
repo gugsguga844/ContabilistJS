@@ -1,7 +1,13 @@
 function handleMenu() {
-    const sidebar = document.getElementById('sidebar');
+    const containerSidebar = document.getElementById('container-sidebar');
     const button = document.querySelector('.buttonMenu i');
   
-    sidebar.classList.toggle('sidebar-hidden');
+    if (containerSidebar.classList.contains('sidebar')) {
+      containerSidebar.classList.remove('sidebar');
+      containerSidebar.classList.add('sidebar-hidden');
+    } else {
+      containerSidebar.classList.remove('sidebar-hidden');
+      containerSidebar.classList.add('sidebar')
+    }
     button.classList.toggle('fa-times');
   }

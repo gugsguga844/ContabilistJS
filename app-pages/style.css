@@ -1,5 +1,8 @@
 /* CSS HOME */
 
+.card {
+  z-index: 0;
+}
 .home-content {
   padding-top: 100px;
 }

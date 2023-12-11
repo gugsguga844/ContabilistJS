@@ -1,13 +1,14 @@
-function handleMenu() {
-    const containerSidebar = document.getElementById('container-sidebar');
-    const button = document.querySelector('.buttonMenu i');
-  
-    if (containerSidebar.classList.contains('sidebar')) {
-      containerSidebar.classList.remove('sidebar');
-      containerSidebar.classList.add('sidebar-hidden');
-    } else {
-      containerSidebar.classList.remove('sidebar-hidden');
-      containerSidebar.classList.add('sidebar')
-    }
-    button.classList.toggle('fa-times');
-  }
+$(function() {
+    $('.buttonMenu').click(function() {
+        const containerSidebar = $('#container-sidebar');
+        const buttonIcon = $('.buttonMenu i');
+
+        if (containerSidebar.hasClass('sidebar')) {
+        containerSidebar.removeClass('sidebar').addClass('sidebar-hidden');
+        } else {
+        containerSidebar.removeClass('sidebar-hidden').addClass('sidebar');
+        }
+
+        buttonIcon.toggleClass('fa-times');
+    });
+});

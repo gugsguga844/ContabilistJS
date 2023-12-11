@@ -1,18 +1,21 @@
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
 .form-container {
-    width: 100%;
-    max-width: 1200px;
-    padding-top: 100px;
+    max-width: 70vw;
+    padding-top: 10vh;
     margin: 0 auto;
 }
 
 .row {
-    padding-bottom: 15px;
+    padding-bottom: 2vh;
 }
 
 .form-message {
     color: #454545;
     font-size: 0.9rem;
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
     display: inline-block;
 }
 .form-message.form-warning {
@@ -22,6 +25,7 @@
 label {
     width: 100%;
 }
+
 label p{
     margin: 0;
     margin-bottom: 10px;
@@ -32,7 +36,7 @@ input,
 select{
     display: block;
     width: 100%;
-    padding: 5px;
+    padding: 1vw;
     border: 1px solid #6D6D6D;
     border-radius: 10px;
     height: 40px;
@@ -67,6 +71,7 @@ label .form-message{
     line-height: initial;
     border-radius: 5px;
     display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .submitButton {
@@ -87,4 +92,21 @@ label :valid {
     color: white; 
     padding: 10px; 
     margin-top: 10px;
+}
+
+.success-message {
+    display: none; 
+    color: green;
+}
+
+.goBackButton button:hover,
+.goBackButton button:focus{
+    background-color: red;
+    transform: translateX(10px) scale(1.2);
+}
+
+.submitButton button:hover,
+.submitButton button:focus{
+    background-color: rgb(4, 255, 4);
+    transform: translateX(10px) scale(1.2);
 }

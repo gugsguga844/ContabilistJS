@@ -31,44 +31,42 @@
     </header>
 
     <main>
-        <aside [id]="isActive">
-            <button class="buttonMenu" type="button" (click)="handleMenu($event)"><i class="fas fa-solid fa-bars fa-2x" style="color: #D1972C;"></i></button>
-        
-            <div class="col-12 col-sm-6 col-md-6 col-lg-2 col-xl-2 container-sidebar d-flex flex-column justify-content-sm-between sidebar">
-                <nav class="sidebar_nav">
-                    <ul class="list-unstyled px-10">
-                        <li>
-                            <a href="../companies-list/companies-list.html" class="text-decoration-none px-3 py-2 d-block">
-                                <i class="far fa-folder fa-2x"></i>
-                                <font size="5">Empresas</font>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/" class="text-decoration-none px-3 py-2 d-block">
-                                <i class="far fa-folder fa-2x"></i>
-                                <font size="5">Nova Empresa</font>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/" class="text-decoration-none px-3 py-2 d-block">
-                                <i class="fas fa-users fa-2x"></i>
-                                <font size="5">Usuários</font>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/" class="text-decoration-none px-3 py-2 d-block">
-                                <i class="fas fa-users fa-2x"></i>
-                                <font size="5">Novo Usuário</font>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-        
-                <figure class="mb-1 sidebar__logo text-center">
-                    <img class="w-100" src="../../../assets/resources/images/logo.svg" alt="Contabilist logo">
-                </figure>
-            </div>
-        </aside>
+        <button class="buttonMenu" type="button" (click)="handleMenu($event)"><i class="fas fa-solid fa-bars fa-2x" style="color: #D1972C;"></i></button>
+    
+        <div id="container-sidebar" class="sidebar col-12 col-sm-6 col-md-6 col-lg-2 col-xl-2 container-sidebar d-flex flex-column justify-content-sm-between">
+            <nav class="sidebar_nav">
+                <ul class="list-unstyled px-10">
+                    <li>
+                        <a href="../../companies/companies-list/companies-list.html" class="text-decoration-none px-3 py-2 d-block">
+                            <i class="far fa-folder fa-2x"></i>
+                            <font size="5">Empresas</font>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../company-form/company-form.html" class="text-decoration-none px-3 py-2 d-block">
+                            <i class="far fa-folder fa-2x"></i>
+                            <font size="5">Nova Empresa</font>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../users/users-list/users-list.html" class="text-decoration-none px-3 py-2 d-block">
+                            <i class="fas fa-users fa-2x"></i>
+                            <font size="5">Usuários</font>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../users/user-form/user-form.html" class="text-decoration-none px-3 py-2 d-block">
+                            <i class="fas fa-users fa-2x"></i>
+                            <font size="5">Novo Usuário</font>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <figure class="mb-1 sidebar__logo text-center">
+                <img class="w-100" src="../../../assets/resources/images/logo.svg" alt="Contabilist logo">
+            </figure>
+        </div>
         <div class="container-fluid">
             <form id="company-form" onsubmit="handleFormSubmit(event)" class="offset-lg-2 offset-xl-2">
                 <div class="form-container">
@@ -137,6 +135,7 @@
                                     required
                                     minlength="18"
                                     maxlength="18"
+                                    onkeypress="$(this).mask('00.000.000/0000-00')"
                                 >
                             </label>
                         </div>
@@ -168,6 +167,7 @@
                                     required
                                     minlength="16"
                                     maxlength="16"
+                                    onkeypress="$(this).mask('(00) 0 0000-0000')"
                                 >
                             </label>
                         </div>
@@ -220,9 +220,7 @@
                     </div>
                 </div>
             </form>
-            <div id="success-message-container">
-                Formulário Enviado com Sucesso!
-            </div>
+            <div class="success-message offset-lg-2 offset-lg-2 text-center"></div>
         </div>
     </main>
     <footer>
@@ -237,68 +235,9 @@
             </div>
         </div>
     </footer>
-    <script>
-    
-        function limpa_formulário_cep() {
-                //Limpa valores do formulário de cep.
-                document.getElementById('state').value=("");
-                document.getElementById('city').value=("");
-        }
-    
-        function meu_callback(conteudo) {
-            if (!("erro" in conteudo)) {
-                //Atualiza os campos com os valores.
-                document.getElementById('state').value=(conteudo.uf);
-                document.getElementById('city').value=(conteudo.localidade);
-            } //end if.
-            else {
-                //CEP não Encontrado.
-                limpa_formulário_cep();
-                alert("CEP não encontrado.");
-            }
-        }
-            
-        function pesquisacep(valor) {
-    
-            //Nova variável "cep" somente com dígitos.
-            var cep = valor.replace(/\D/g, '');
-    
-            //Verifica se campo cep possui valor informado.
-            if (cep != "") {
-    
-                //Expressão regular para validar o CEP.
-                var validacep = /^[0-9]{8}$/;
-    
-                //Valida o formato do CEP.
-                if(validacep.test(cep)) {
-    
-                    //Preenche os campos com "..." enquanto consulta webservice.
-                    document.getElementById('state').value="...";
-                    document.getElementById('city').value="...";
-    
-                    //Cria um elemento javascript.
-                    var script = document.createElement('script');
-    
-                    //Sincroniza com o callback.
-                    script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
-    
-                    //Insere script no documento e carrega o conteúdo.
-                    document.body.appendChild(script);
-    
-                } //end if.
-                else {
-                    //cep é inválido.
-                    limpa_formulário_cep();
-                    alert("Formato de CEP inválido.");
-                }
-            } //end if.
-            else {
-                //cep sem valor, limpa formulário.
-                limpa_formulário_cep();
-            }
-        };
-    
-        </script>
     <script src="company-form.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="../../sidebar.js"></script>
 </body>
 </html>

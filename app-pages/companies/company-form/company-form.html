@@ -77,7 +77,6 @@
                             <label for="businessName">
                                 <p>Razão Social *</p>
                                 <input
-                                    formControlName="businessName"
                                     type="text"
                                     name="businessName"
                                     id="businessName"
@@ -94,7 +93,7 @@
                         <div class="col-4">
                             <label for="status">
                                 <p>Ativa? *</p>
-                                <select formControlName="status" name="status" id="status" required>
+                                <select name="status" id="status" required>
                                     <option value="true">Sim</option>
                                     <option value="false">Não</option>
                                 </select>
@@ -109,7 +108,6 @@
                             <label for="name">
                                 <p>Nome Fantasia *</p>
                                 <input
-                                    formControlName="name"
                                     type="text"
                                     name="name"
                                     id="name"
@@ -127,7 +125,6 @@
                             <label for="cnpj">
                                 <p>CNPJ *</p>
                                 <input
-                                    formControlName="cnpj"
                                     type="text"
                                     name="cnpj"
                                     id="cnpj"
@@ -144,7 +141,6 @@
                             <label for="email">
                                 <p>Endereço de E-mail *</p>
                                 <input
-                                    formControlName="email"
                                     type="email"
                                     name="email"
                                     id="email"
@@ -159,7 +155,6 @@
                             <label for="phone">
                                 <p>Telefone *</p>
                                 <input
-                                    formControlName="phone"
                                     type="tel"
                                     name="phone"
                                     id="phone"
@@ -179,7 +174,6 @@
                             <label for="cep">
                                 <p>CEP *</p>
                                 <input
-                                    formControlName="cep"
                                     type="text"
                                     name="cep"
                                     id="cep"
@@ -189,19 +183,20 @@
                                     value="" 
                                     size="10" 
                                     maxlength="9"
+                                    onkeypress="$(this).mask('00000-000')"
                                 >
                             </label>
                         </div>
                         <div class="col-lg-4 col-xl-4">
                             <label for="city">
                                 <p>Cidade *</p>
-                                <input type="text" name="city" id="city" formControlName="city" placeholder="São Paulo" required>
+                                <input type="text" name="city" id="city" placeholder="Guarapuava" required>
                             </label>
                         </div>
                         <div class="col-lg-4 col-xl-4">
                             <label for="state">
                                 <p>Estado *</p>
-                                <input type="text" name="state" id="state" formControlName="state" placeholder="São Paulo" required>
+                                <input type="text" name="state" id="state" placeholder="Parana" required>
                             </label>
                         </div>
                     </div>

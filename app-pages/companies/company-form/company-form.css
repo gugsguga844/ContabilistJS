@@ -36,7 +36,7 @@ input,
 select{
     display: block;
     width: 100%;
-    padding: 1vw;
+    padding: 5px;
     border: 1px solid #6D6D6D;
     border-radius: 10px;
     height: 40px;

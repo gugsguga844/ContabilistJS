@@ -1,14 +1,20 @@
-# Controle de empresas de um escritorio de contabilidade
+# ContabilistJS - Controle de empresas de um escritorio de contabilidade
 
+O ContabilistJS é um sistema utilizado por escritórios de contabilidade para o controle e gestão contábil das empresas cliente. O sistema apresenta uma lista de empresas que pertencem à um escritório de contabilidade.
 
+O frontend da aplicação foi desenvolvido utilizando HTML, CSS e JavaScript, sendo utilizada uma API Pública para preencher o endereço conforme um CEP.
 
 ## Endereço de Deploy - GitHub Pages
 
-
+Não realizado
 
 ## Protótipo
 
 https://www.figma.com/file/Jgk1Gzk14xjlOer6w0YrFg/Contabilist?type=design&node-id=0%3A1&mode=design&t=1XFGkzvizvtZM0jC-1
+
+## Apresentação
+
+https://drive.google.com/file/d/13ynSERiQZt3RD1vGlRXA5Ceskv9aCCMz/view?usp=sharing
 
 ## Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 

@@ -15,4 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		tableBody.appendChild(row);
 	});
 
+	const searchInput = document.querySelector('input[type="text"]');
+
+	searchInput.addEventListener('input', function () {
+		const searchText = this.value.toLowerCase();
+
+		Array.from(tableBody.rows).forEach(function (row) {
+			row.style.display = row.textContent.toLowerCase().includes(searchText) ? '' : 'none';
+		});
+	});
 });

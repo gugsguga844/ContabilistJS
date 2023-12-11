@@ -1,0 +1,28 @@
+footer {
+    max-width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    font-weight: 500;
+}
+footer p strong{
+    color: #D1972C;
+    font-weight: 500;
+}
+
+@media (min-width: 992px) {
+    footer p {
+        padding-top: 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    footer p {
+        padding-top: 10px;
+    }
+} 

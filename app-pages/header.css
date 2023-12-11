@@ -1,0 +1,20 @@
+header {
+    background: #000;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+  }
+  
+  header nav i{
+    color: #D1972C;
+  }
+  
+  header nav .signOut {
+    padding-right: 45px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    header nav .signOut {
+        padding-right: 0;
+    }   
+  }
